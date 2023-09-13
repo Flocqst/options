@@ -1,6 +1,7 @@
 import { ConnectButton } from '@rainbow-me/rainbowkit';
 import { ModeToggle } from '@/components/ModeToggle'
 import { MarketCombobox } from '@/components/MarketCombobox';
+import { PriceChart } from '@/components/PriceChart';
 
 function Page() {
   return (
@@ -18,6 +19,7 @@ function Page() {
     </div>
     <div className="flex gap-4">
       <MarketCombobox />
+      <PriceChart asset="ethereum" />
     </div>
   </section>
   );
