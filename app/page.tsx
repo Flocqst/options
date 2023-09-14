@@ -2,6 +2,7 @@ import { ConnectButton } from '@rainbow-me/rainbowkit';
 import { ModeToggle } from '@/components/ModeToggle'
 import { MarketCombobox } from '@/components/MarketCombobox';
 import { PriceChart } from '@/components/PriceChart';
+import MockupSynthetix from '@/components/MockupSynthetixQuery';
 
 function Page() {
   return (
