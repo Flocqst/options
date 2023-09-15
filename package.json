@@ -28,6 +28,7 @@
     "codegen-graph-ts": "^0.1.4",
     "eslint": "8.49.0",
     "eslint-config-next": "13.4.19",
+    "ethers": "5.7.2",
     "lightweight-charts": "^4.0.1",
     "next": "13.4.19",
     "next-themes": "^0.2.1",

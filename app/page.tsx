@@ -1,7 +1,7 @@
 import { ConnectButton } from '@rainbow-me/rainbowkit';
 import { ModeToggle } from '@/components/ModeToggle'
 import { MarketCombobox } from '@/components/MarketCombobox';
-import { PriceChart } from '@/components/PriceChart';
+import MockupWagmi from '@/components/MockupWagmi';
 import MockupSynthetix from '@/components/MockupSynthetixQuery';
 
 function Page() {
@@ -20,8 +20,8 @@ function Page() {
     </div>
     <div className="flex gap-4">
       <MarketCombobox />
-      <PriceChart asset="ethereum" />
     </div>
+    <MockupWagmi />
   </section>
   );
 }

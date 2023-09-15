@@ -22,12 +22,9 @@ import {
 } from 'wagmi/chains';
 import { publicProvider } from 'wagmi/providers/public';
 
-import {
-  createQueryContext,
-  SynthetixQueryContextProvider,
-} from '@synthetixio/queries'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
-import { NetworkId } from '@synthetixio/contracts-interface';
+
+const queryClient = new QueryClient()
 
 const { chains, publicClient, webSocketPublicClient } =
   configureChains(
@@ -75,8 +72,6 @@ const wagmiConfig = createConfig({
   webSocketPublicClient,
 });
 
-const queryClient = new QueryClient()
-
 export function Providers({
   children,
 }: {
@@ -85,19 +80,12 @@ export function Providers({
   const [mounted, setMounted] = React.useState(false);
   React.useEffect(() => setMounted(true), []);
   return (
-    <WagmiConfig config={wagmiConfig}>
-      <RainbowKitProvider chains={chains} appInfo={demoAppInfo}>
-        <QueryClientProvider client={queryClient}>
-          <SynthetixQueryContextProvider
-            value={createQueryContext({
-              networkId: 10 as NetworkId, // Options: 1 (Mainnet), 10 (Optimism), 42 (Kovan), 69 (Optimism Kovan),42 (Goerli) and 69 (Optimism Goerli)
-              synthetixjs: null,
-            })}
-          >
-            {mounted && children}
-          </SynthetixQueryContextProvider>
-        </QueryClientProvider>
-      </RainbowKitProvider>
-    </WagmiConfig>
+    <QueryClientProvider client={queryClient}>
+      <WagmiConfig config={wagmiConfig}>
+        <RainbowKitProvider chains={chains} appInfo={demoAppInfo}>
+          {mounted && children}
+        </RainbowKitProvider>
+      </WagmiConfig>
+    </QueryClientProvider>
   );
 }
