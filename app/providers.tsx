@@ -22,7 +22,7 @@ import {
 } from 'wagmi/chains';
 import { publicProvider } from 'wagmi/providers/public';
 
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import { QueryClientProvider, QueryClient } from 'react-query';
 
 const queryClient = new QueryClient()
 

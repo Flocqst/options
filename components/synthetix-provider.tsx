@@ -27,7 +27,6 @@ export function SynthetixQueryProvider({children}: {children: React.ReactNode;})
             synthetixjs
           })}
         >
-      <MockupSynthetix />
       {children}
     </SynthetixQueryContextProvider>
   );

@@ -2,7 +2,7 @@
 
 import useSynthetixQueries from '@synthetixio/queries'
 
-export default function MockupSynthetix() {
+export default function Component() {
   const { subgraph } = useSynthetixQueries()
   const result = subgraph.useGetDebtStates(
     { first: 1, orderBy: 'timestamp', orderDirection: 'desc' },

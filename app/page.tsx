@@ -22,6 +22,7 @@ function Page() {
       <MarketCombobox />
     </div>
     <MockupWagmi />
+    <MockupSynthetix />
   </section>
   );
 }
