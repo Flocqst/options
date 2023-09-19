@@ -1,14 +1,9 @@
 "use client"
 
 import useSynthetixQueries, { CandleResult } from '@synthetixio/queries'
-import Wei, { WeiSource, wei } from '@synthetixio/wei'
-import { PriceChart } from './PriceChart'
 import React, { useEffect, useState, useRef } from 'react';
-import { CandlestickData, ColorType, createChart, CrosshairMode, IChartApi, UTCTimestamp } from 'lightweight-charts';
+import { ColorType, createChart, CrosshairMode, IChartApi, UTCTimestamp } from 'lightweight-charts';
 
-import axios from 'axios';
-
-// { id: "SNX-2629728-640" },
 
 export type CandleChartData = {
 	time: UTCTimestamp,
