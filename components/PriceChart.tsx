@@ -1,15 +1,22 @@
 "use client"
 
 import React, { useEffect, useState, useRef } from 'react';
-import { ColorType, createChart, CrosshairMode, IChartApi, UTCTimestamp } from 'lightweight-charts';
+import { CandlestickData, ColorType, createChart, CrosshairMode, IChartApi, UTCTimestamp } from 'lightweight-charts';
+import Wei, { WeiSource, wei } from '@synthetixio/wei'
 
 import axios from 'axios';
+import { CandleResult } from '@synthetixio/queries';
+import { CandleChartData } from './MockupSynthetixQuery';
 
 type PriceChartProps = {
 	asset: string;
 };
 
-export const PriceChart = ({ asset }: PriceChartProps) => {
+interface CandleChartProps {
+  dataC: CandleChartData[];
+}
+
+export const PriceChart = ({ dataC }: CandleChartProps) => {
   const chartContainerRef = useRef<HTMLDivElement | null>(null);
   const chartRef = useRef<IChartApi | null>(null);
 
@@ -58,7 +65,7 @@ export const PriceChart = ({ asset }: PriceChartProps) => {
         // Add more data points here
       ];
 
-      candlestickSeries.setData(data);
+      candlestickSeries.setData(dataC);
 
       chartRef.current.applyOptions({
         crosshair: {

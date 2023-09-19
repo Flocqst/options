@@ -7,7 +7,6 @@ import {
 } from '@synthetixio/queries'
 import { useMemo } from 'react';
 import { NetworkId, synthetix } from '@synthetixio/contracts-interface';
-import MockupSynthetix from './MockupSynthetixQuery';
 
 export function SynthetixQueryProvider({children}: {children: React.ReactNode;}) {
   const provider = useEthersProvider({

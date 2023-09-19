@@ -3,6 +3,7 @@ import { ModeToggle } from '@/components/ModeToggle'
 import { MarketCombobox } from '@/components/MarketCombobox';
 import MockupWagmi from '@/components/MockupWagmi';
 import MockupSynthetix from '@/components/MockupSynthetixQuery';
+import Chart from '@/components/Chart'
 
 function Page() {
   return (
@@ -22,7 +23,7 @@ function Page() {
       <MarketCombobox />
     </div>
     <MockupWagmi />
-    <MockupSynthetix />
+    <Chart />
   </section>
   );
 }
