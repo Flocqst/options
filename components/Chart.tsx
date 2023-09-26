@@ -1,9 +1,12 @@
 "use client"
 
-import useSynthetixQueries, { CandleResult } from '@synthetixio/queries'
-import React, { useEffect, useState, useRef } from 'react';
+import useSynthetixQueries from '@synthetixio/queries'
+import React, { useEffect, useRef } from 'react';
 import { ColorType, createChart, CrosshairMode, IChartApi, UTCTimestamp } from 'lightweight-charts';
 
+import { selectionAtom } from './SelectMarket';
+
+import { useAtomValue } from 'jotai';
 
 export type CandleChartData = {
 	time: UTCTimestamp,
@@ -13,9 +16,11 @@ export type CandleChartData = {
   close: number,
 };
 
-export default function MockupSynthetix() {
+export default function PriceChart() {
   const chartContainerRef = useRef<HTMLDivElement | null>(null);
   const chartRef = useRef<IChartApi | null>(null);
+
+  const selection = useAtomValue(selectionAtom)
 
   const { subgraph } = useSynthetixQueries()
 
@@ -23,7 +28,7 @@ export default function MockupSynthetix() {
     {
       first: 10,
       where: {
-        synth: 'SNX',
+        synth: selection,
         period: '2629728',
       },
       orderBy: 'timestamp',
@@ -104,6 +109,13 @@ export default function MockupSynthetix() {
         });
       }
     }
+
+    return () => {
+      if (chartRef.current) {
+        chartRef.current.remove();
+      }
+    };
+
   }, [candles]);
 
 

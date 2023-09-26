@@ -1,8 +1,7 @@
 import { ConnectButton } from '@rainbow-me/rainbowkit';
 import { ModeToggle } from '@/components/ModeToggle'
-import { MarketCombobox } from '@/components/MarketCombobox';
-import MockupWagmi from '@/components/MockupWagmi';
-import Chart from '@/components/Chart'
+import PriceChart from '@/components/Chart';
+import { SelectMarket } from '@/components/SelectMarket';
 
 function Page() {
   return (
@@ -18,11 +17,10 @@ function Page() {
       <ConnectButton />
       <ModeToggle />
     </div>
-    <div className="flex gap-4">
-      <MarketCombobox />
+    <div className="flex gap-4 w-80">
+      <SelectMarket />
     </div>
-    <MockupWagmi />
-    <Chart />
+    <PriceChart />
   </section>
   );
 }

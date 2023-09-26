@@ -24,6 +24,8 @@ import { publicProvider } from 'wagmi/providers/public';
 
 import { QueryClientProvider, QueryClient } from 'react-query';
 
+import { Provider } from 'jotai'
+
 const queryClient = new QueryClient()
 
 const { chains, publicClient, webSocketPublicClient } =
@@ -80,12 +82,14 @@ export function Providers({
   const [mounted, setMounted] = React.useState(false);
   React.useEffect(() => setMounted(true), []);
   return (
-    <QueryClientProvider client={queryClient}>
-      <WagmiConfig config={wagmiConfig}>
-        <RainbowKitProvider chains={chains} appInfo={demoAppInfo}>
-          {mounted && children}
-        </RainbowKitProvider>
-      </WagmiConfig>
-    </QueryClientProvider>
+    <Provider>
+      <QueryClientProvider client={queryClient}>
+        <WagmiConfig config={wagmiConfig}>
+          <RainbowKitProvider chains={chains} appInfo={demoAppInfo}>
+            {mounted && children}
+          </RainbowKitProvider>
+        </WagmiConfig>
+      </QueryClientProvider>
+    </Provider>
   );
 }

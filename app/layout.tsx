@@ -4,7 +4,6 @@ import { Providers } from './providers';
 import { ThemeProvider } from "@/components/theme-provider"
 import { SynthetixQueryProvider } from '@/components/synthetix-provider';
 
-
 function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
