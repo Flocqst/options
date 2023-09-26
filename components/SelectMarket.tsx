@@ -12,7 +12,7 @@ import React from 'react';
 
 import { atom, useAtom } from 'jotai';
 
-export const selectionAtom = atom("SNX")
+export const selectionAtom = atom<string>("SNX")
 
 export const styles = [
   {
