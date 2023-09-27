@@ -15,10 +15,6 @@ function Page() {
         Etiam non sapien eu odio venenatis molestie.
       </p>
     </div>
-    <div className="flex gap-4 w-80">
-      <SelectMarket />
-    </div>
-    <PriceChart />
   </section>
   );
 }
