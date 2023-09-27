@@ -14,8 +14,6 @@ function Page() {
         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         Etiam non sapien eu odio venenatis molestie.
       </p>
-      <ConnectButton />
-      <ModeToggle />
     </div>
     <div className="flex gap-4 w-80">
       <SelectMarket />
