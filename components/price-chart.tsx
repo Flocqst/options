@@ -4,7 +4,7 @@ import useSynthetixQueries from '@synthetixio/queries'
 import React, { useEffect, useRef } from 'react';
 import { ColorType, createChart, CrosshairMode, IChartApi, UTCTimestamp } from 'lightweight-charts';
 
-import { selectionAtom } from './SelectMarket';
+import { selectionAtom } from './select-market';
 
 import { useAtomValue } from 'jotai';
 

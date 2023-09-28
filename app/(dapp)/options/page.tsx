@@ -1,5 +1,5 @@
-import PriceChart from "@/components/Chart";
-import { SelectMarket } from "@/components/SelectMarket";
+import PriceChart from "@/components/price-chart";
+import { SelectMarket } from "@/components/select-market";
 
 export default function Page() {
   return (
