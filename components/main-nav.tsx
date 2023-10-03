@@ -6,9 +6,7 @@ import { useSelectedLayoutSegment } from "next/navigation"
 import { cn } from "@/lib/utils"
 import { MainNavItem } from "@/types"
 import { ConnectButton } from "@rainbow-me/rainbowkit"
-import { ModeToggle } from "./ModeToggle"
-
-
+import { ModeToggle } from "./mode-toggle"
 
 interface MainNavProps {
   items?: MainNavItem[]
@@ -18,7 +16,7 @@ export function MainNav({ items }: MainNavProps) {
   const segment = useSelectedLayoutSegment()
 
   return (
-    <nav className="fixed top-0 z-30 flex-no-wrap relative flex w-full items-center justify-between bg-white dark:bg-zinc-800 px-6 py-3">
+    <nav className="fixed top-0 z-30 flex-no-wrap relative flex w-full items-center justify-between px-6 py-3">
       <div className="flex gap-6 md:gap-10">
         <Link href="/" className="hidden items-center space-x-2 md:flex">
           <span className="hidden font-bold sm:inline-block">

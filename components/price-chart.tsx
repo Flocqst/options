@@ -52,6 +52,7 @@ export default function PriceChart() {
       chartRef.current = createChart(chartContainerRef.current, {
         width: 800,
         height: 400,
+        autoSize: true,
         layout: {
           background: { type: ColorType.Solid, color: '#00000000' },
         },
